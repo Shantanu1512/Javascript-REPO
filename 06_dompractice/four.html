@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM part 2 delete</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(listName){
+        const li = document.createElement('li')
+        li.innerText = `${listName}`
+        document.querySelector(".language").
+        appendChild(li)
+    }
+
+    function adOptiLanguage(listName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(listName)) 
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addLanguage("Python")
+
+    adOptiLanguage("Java")
+
+    //Edit function
+
+    const secLan = document.querySelector("li:nth-child(2)")
+    const neLi = document.createElement('li')
+    neLi.textContent = "Mojo"
+    secLan.replaceWith(neLi)
+
+    function replaceEle(val){
+        const firVal = document.querySelector("li:nth-child(1)")
+        const newLi = document.createElement('li')
+        newLi.appendChild(document.createTextNode(`${val}`))
+        firVal.replaceWith(newLi)
+    }
+
+    replaceEle("CPP")
+
+    //remove
+
+    const lastName = document.querySelector("li:last-child")
+    lastName.remove()
+</script>
+</html>
