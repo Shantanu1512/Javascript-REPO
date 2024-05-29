@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Shantanu's JS Code Part 2</h1>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+</body>
+<script>
+    let pointer = 1
+    const sayShantanu = function(){
+        console.log(`Shantanu ${Date.now()}`);
+        pointer++
+    }
+    let interval
+    document.querySelector('#start').addEventListener('click', () => {
+        interval = setInterval(sayShantanu,1000)
+    })
+
+    document.querySelector('#stop').addEventListener('click', () => {
+        clearInterval(interval)
+        console.log("STOPPED !!!!!");
+    })
+</script>
+</html>

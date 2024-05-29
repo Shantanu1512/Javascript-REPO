@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Javascript Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const say=function(){
+        console.log("Shantanu  ");
+    }
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "Shananu's JS Code"
+    }
+    const changeMe = setTimeout(changeText, 5000)
+    document.querySelector('#stop').addEventListener('click',()=>{
+        clearTimeout(changeMe)
+        console.log("clear executed");
+    })
+    // setTimeout(say, 2000)
+</script>
+</html>
