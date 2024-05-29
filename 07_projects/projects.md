@@ -175,3 +175,58 @@ function newGame() {
 
 
 ```
+
+##Project 5 : Keyboard press
+
+```Javascript
+const insert = document.querySelector('#insert')
+
+window.addEventListener('keydown', (e) => {
+  insert.innerHTML = `
+  <div class='color'> 
+  <table>
+  <tr>
+    <th>Key</th>
+    <th>Keycode</th>
+    <th>Code</th>
+  </tr>
+  <tr>
+    <td>${e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+</table>
+</div>
+  `
+})
+```
+
+##Project 6 : Random color changing
+
+```javascript
+//Generate random color logic
+const generateRandomColor = function(){
+  const hex = '0123456789ABCDEF';
+let color = '#';
+
+for (let i = 0; i < 6; i++) {
+  color += hex[Math.floor(Math.random() * 16)]
+}
+return color
+}
+let interval
+function startColor(){
+  interval = setInterval(function(){
+    document.body.style.backgroundColor = generateRandomColor()
+  },1000)
+  
+}
+
+function stopColor(){
+  clearInterval(interval)
+}
+document.querySelector('#start').addEventListener('click', startColor)
+
+document.querySelector('#stop').addEventListener('click', stopColor)
+
+```
